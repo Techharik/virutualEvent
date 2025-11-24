@@ -1,5 +1,5 @@
 export class AppError extends Error {
-    constructor(public message: string, public statusCode: number, public isOptional = true) {
+    constructor(public statusCode: number, public message: string, public isOptional = true) {
         super(message)
         Object.setPrototypeOf(this, AppError.prototype);
         Error.captureStackTrace(this, this.constructor)
@@ -7,17 +7,19 @@ export class AppError extends Error {
 }
 
 export class NotFountError extends AppError {
-    constructor(message = 'Resource Not Found', statusCode = 404) {
-        super(message, statusCode)
+    constructor(statusCode = 404, message = 'Resource Not Found') {
+        super(statusCode, message)
     }
 }
+
 export class ValidationError extends AppError {
-    constructor(message = 'Validation Failed', statusCode = 400) {
-        super(message, statusCode)
+    constructor(statusCode = 400, message = 'Validation Failed') {
+        super(statusCode, message)
     }
 }
+
 export class ConflictError extends AppError {
-    constructor(message = 'Resource Already Exists', statusCode = 409) {
-        super(message, statusCode)
+    constructor(statusCode = 409, message = 'Resource Already Exists') {
+        super(statusCode, message)
     }
 }

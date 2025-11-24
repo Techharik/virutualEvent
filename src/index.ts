@@ -1,29 +1,32 @@
 import express, { NextFunction, type Request, type Response } from "express";
 import 'dotenv/config'
-import { logger } from "./middlewares/logger";
 import { NODE_ENV } from "./config/config";
 import winston from 'winston';
-import { errorHandler } from "./utils/errorHandler";
+import { errorHandler } from "./middlewares/error";
+import cors from "cors";
+import { logger } from "./middlewares/logger";
+import userRoutes from './routes/userRoutes'
 
 export const app = express();
 
+
+
 //middlware
 
-if (process.env.NODE_ENV !== 'production') {
-    logger.add(new winston.transports.Console({
-        format: winston.format.simple(),
-    }));
-}
 
 
 
+app.use(express.json())
+app.use(express.urlencoded({ extended: true }))
+app.use(cors())
 
 //routes
-app.use("/api/v1",)
+app.use("/api/v1", userRoutes)
+
 
 app.get('/', (req: Request, res: Response) => {
     res.status(200).json({
-        message: "Welcome to Event Mangement API"
+        message: "Welcome to Event Management API"
     })
 })
 
