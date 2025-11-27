@@ -1,0 +1,7 @@
+{"level":"error","message":"DBconnection failed","service":"event-service"}
+{"level":"error","message":"DBconnection failed","service":"event-service"}
+{"code":400,"level":"error","message":"Invalid input: expected object, received undefined","service":"event-service"}
+{"code":400,"level":"error","message":"Invalid input: expected object, received undefined","service":"event-service"}
+{"code":400,"level":"error","message":"Invalid input: expected object, received undefined","service":"event-service"}
+{"code":400,"level":"error","message":"Invalid input: expected string, received undefined","service":"event-service"}
+{"code":400,"level":"error","message":"Invalid input: expected string, received undefined","service":"event-service"}

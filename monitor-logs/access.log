@@ -1,0 +1,110 @@
+{"dbconnection":true,"level":"http","message":"mongodb connection","service":"event-service"}
+{"level":"http","message":"GET / 304 - - 1.856 ms","service":"event-service"}
+{"dbconnection":true,"level":"http","message":"mongodb connection","service":"event-service"}
+{"level":"http","message":"POST /users/register 404 154 - 2.494 ms","service":"event-service"}
+{"level":"http","message":"POST /users/register 404 154 - 0.759 ms","service":"event-service"}
+{"level":"http","message":"POST /user/register 404 153 - 0.467 ms","service":"event-service"}
+{"dbconnection":true,"level":"http","message":"mongodb connection","service":"event-service"}
+{"level":"http","message":"POST /api/v1/user/register 500 55 - 2194.171 ms","service":"event-service"}
+{"dbconnection":true,"level":"http","message":"mongodb connection","service":"event-service"}
+{"dbconnection":true,"level":"http","message":"mongodb connection","service":"event-service"}
+{"dbconnection":true,"level":"http","message":"mongodb connection","service":"event-service"}
+{"level":"http","message":"POST /api/v1/user/register 500 55 - 506.243 ms","service":"event-service"}
+{"dbconnection":true,"level":"http","message":"mongodb connection","service":"event-service"}
+{"level":"http","message":"POST /api/v1/user/register 500 55 - 496.844 ms","service":"event-service"}
+{"dbconnection":true,"level":"http","message":"mongodb connection","service":"event-service"}
+{"dbconnection":true,"level":"http","message":"mongodb connection","service":"event-service"}
+{"dbconnection":true,"level":"http","message":"mongodb connection","service":"event-service"}
+{"level":"http","message":"POST /api/v1/user/register 201 174 - 760.375 ms","service":"event-service"}
+{"level":"http","message":"POST /api/v1/user/register 500 89 - 261.172 ms","service":"event-service"}
+{"dbconnection":true,"level":"http","message":"mongodb connection","service":"event-service"}
+{"dbconnection":true,"level":"http","message":"mongodb connection","service":"event-service"}
+{"level":"http","message":"POST /api/v1/user/register 409 51 - 259.024 ms","service":"event-service"}
+{"dbconnection":true,"level":"http","message":"mongodb connection","service":"event-service"}
+{"dbconnection":true,"level":"http","message":"mongodb connection","service":"event-service"}
+{"dbconnection":true,"level":"http","message":"mongodb connection","service":"event-service"}
+{"dbconnection":true,"level":"http","message":"mongodb connection","service":"event-service"}
+{"dbconnection":true,"level":"http","message":"mongodb connection","service":"event-service"}
+{"dbconnection":true,"level":"http","message":"mongodb connection","service":"event-service"}
+{"dbconnection":true,"level":"http","message":"mongodb connection","service":"event-service"}
+{"dbconnection":true,"level":"http","message":"mongodb connection","service":"event-service"}
+{"dbconnection":true,"level":"http","message":"mongodb connection","service":"event-service"}
+{"dbconnection":true,"level":"http","message":"mongodb connection","service":"event-service"}
+{"dbconnection":true,"level":"http","message":"mongodb connection","service":"event-service"}
+{"dbconnection":true,"level":"http","message":"mongodb connection","service":"event-service"}
+{"dbconnection":true,"level":"http","message":"mongodb connection","service":"event-service"}
+{"dbconnection":true,"level":"http","message":"mongodb connection","service":"event-service"}
+{"dbconnection":true,"level":"http","message":"mongodb connection","service":"event-service"}
+{"dbconnection":true,"level":"http","message":"mongodb connection","service":"event-service"}
+{"dbconnection":true,"level":"http","message":"mongodb connection","service":"event-service"}
+{"dbconnection":true,"level":"http","message":"mongodb connection","service":"event-service"}
+{"dbconnection":true,"level":"http","message":"mongodb connection","service":"event-service"}
+{"dbconnection":true,"level":"http","message":"mongodb connection","service":"event-service"}
+{"dbconnection":true,"level":"http","message":"mongodb connection","service":"event-service"}
+{"dbconnection":true,"level":"http","message":"mongodb connection","service":"event-service"}
+{"dbconnection":true,"level":"http","message":"mongodb connection","service":"event-service"}
+{"dbconnection":true,"level":"http","message":"mongodb connection","service":"event-service"}
+{"dbconnection":true,"level":"http","message":"mongodb connection","service":"event-service"}
+{"dbconnection":true,"level":"http","message":"mongodb connection","service":"event-service"}
+{"dbconnection":true,"level":"http","message":"mongodb connection","service":"event-service"}
+{"dbconnection":true,"level":"http","message":"mongodb connection","service":"event-service"}
+{"dbconnection":true,"level":"http","message":"mongodb connection","service":"event-service"}
+{"dbconnection":true,"level":"http","message":"mongodb connection","service":"event-service"}
+{"dbconnection":true,"level":"http","message":"mongodb connection","service":"event-service"}
+{"dbconnection":true,"level":"http","message":"mongodb connection","service":"event-service"}
+{"dbconnection":true,"level":"http","message":"mongodb connection","service":"event-service"}
+{"dbconnection":true,"level":"http","message":"mongodb connection","service":"event-service"}
+{"level":"http","message":"POST /api/v1/user/login 400 81 - 9.840 ms","service":"event-service"}
+{"dbconnection":true,"level":"http","message":"mongodb connection","service":"event-service"}
+{"level":"http","message":"POST /api/v1/user/login 400 81 - 8.670 ms","service":"event-service"}
+{"level":"http","message":"POST /api/v1/user/login 400 81 - 2.979 ms","service":"event-service"}
+{"level":"http","message":"POST /api/v1/user/login 400 81 - 3.529 ms","service":"event-service"}
+{"level":"http","message":"POST /api/v1/user/login 400 81 - 2.333 ms","service":"event-service"}
+{"dbconnection":true,"level":"http","message":"mongodb connection","service":"event-service"}
+{"dbconnection":true,"level":"http","message":"mongodb connection","service":"event-service"}
+{"dbconnection":true,"level":"http","message":"mongodb connection","service":"event-service"}
+{"level":"http","message":"POST /api/v1/user/login 200 32 - 486.190 ms","service":"event-service"}
+{"dbconnection":true,"level":"http","message":"mongodb connection","service":"event-service"}
+{"dbconnection":true,"level":"http","message":"mongodb connection","service":"event-service"}
+{"dbconnection":true,"level":"http","message":"mongodb connection","service":"event-service"}
+{"dbconnection":true,"level":"http","message":"mongodb connection","service":"event-service"}
+{"dbconnection":true,"level":"http","message":"mongodb connection","service":"event-service"}
+{"level":"http","message":"POST /api/v1/user/login 200 213 - 483.373 ms","service":"event-service"}
+{"dbconnection":true,"level":"http","message":"mongodb connection","service":"event-service"}
+{"dbconnection":true,"level":"http","message":"mongodb connection","service":"event-service"}
+{"dbconnection":true,"level":"http","message":"mongodb connection","service":"event-service"}
+{"dbconnection":true,"level":"http","message":"mongodb connection","service":"event-service"}
+{"dbconnection":true,"level":"http","message":"mongodb connection","service":"event-service"}
+{"dbconnection":true,"level":"http","message":"mongodb connection","service":"event-service"}
+{"dbconnection":true,"level":"http","message":"mongodb connection","service":"event-service"}
+{"dbconnection":true,"level":"http","message":"mongodb connection","service":"event-service"}
+{"dbconnection":true,"level":"http","message":"mongodb connection","service":"event-service"}
+{"dbconnection":true,"level":"http","message":"mongodb connection","service":"event-service"}
+{"dbconnection":true,"level":"http","message":"mongodb connection","service":"event-service"}
+{"dbconnection":true,"level":"http","message":"mongodb connection","service":"event-service"}
+{"dbconnection":true,"level":"http","message":"mongodb connection","service":"event-service"}
+{"dbconnection":true,"level":"http","message":"mongodb connection","service":"event-service"}
+{"dbconnection":true,"level":"http","message":"mongodb connection","service":"event-service"}
+{"dbconnection":true,"level":"http","message":"mongodb connection","service":"event-service"}
+{"dbconnection":true,"level":"http","message":"mongodb connection","service":"event-service"}
+{"dbconnection":true,"level":"http","message":"mongodb connection","service":"event-service"}
+{"dbconnection":true,"level":"http","message":"mongodb connection","service":"event-service"}
+{"dbconnection":true,"level":"http","message":"mongodb connection","service":"event-service"}
+{"dbconnection":true,"level":"http","message":"mongodb connection","service":"event-service"}
+{"dbconnection":true,"level":"http","message":"mongodb connection","service":"event-service"}
+{"dbconnection":true,"level":"http","message":"mongodb connection","service":"event-service"}
+{"dbconnection":true,"level":"http","message":"mongodb connection","service":"event-service"}
+{"dbconnection":true,"level":"http","message":"mongodb connection","service":"event-service"}
+{"dbconnection":true,"level":"http","message":"mongodb connection","service":"event-service"}
+{"dbconnection":true,"level":"http","message":"mongodb connection","service":"event-service"}
+{"dbconnection":true,"level":"http","message":"mongodb connection","service":"event-service"}
+{"dbconnection":true,"level":"http","message":"mongodb connection","service":"event-service"}
+{"dbconnection":true,"level":"http","message":"mongodb connection","service":"event-service"}
+{"dbconnection":true,"level":"http","message":"mongodb connection","service":"event-service"}
+{"dbconnection":true,"level":"http","message":"mongodb connection","service":"event-service"}
+{"dbconnection":true,"level":"http","message":"mongodb connection","service":"event-service"}
+{"dbconnection":true,"level":"http","message":"mongodb connection","service":"event-service"}
+{"dbconnection":true,"level":"http","message":"mongodb connection","service":"event-service"}
+{"dbconnection":true,"level":"http","message":"mongodb connection","service":"event-service"}
+{"dbconnection":true,"level":"http","message":"mongodb connection","service":"event-service"}
+{"dbconnection":true,"level":"http","message":"mongodb connection","service":"event-service"}

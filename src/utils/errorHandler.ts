@@ -23,3 +23,8 @@ export class ConflictError extends AppError {
         super(409, message)
     }
 }
+export class ForbiddenError extends AppError {
+    constructor(message = 'Resource Already Exists') {
+        super(401, message)
+    }
+}

@@ -4,24 +4,23 @@ import { NODE_ENV } from "./config/config";
 import winston from 'winston';
 import { errorHandler } from "./middlewares/error";
 import cors from "cors";
-import { logger } from "./middlewares/logger";
+import { requestLogger } from "./middlewares/logger";
 import userRoutes from './routes/userRoutes'
+import eventRoutes from './routes/EventRoutes'
 
 export const app = express();
 
 
 
 //middlware
-
-
-
-
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use(cors())
+app.use(requestLogger)
 
 //routes
-app.use("/api/v1", userRoutes)
+app.use("/api/v1/user/", userRoutes)
+app.use("/api/v1/events/", eventRoutes)
 
 
 app.get('/', (req: Request, res: Response) => {
@@ -29,9 +28,6 @@ app.get('/', (req: Request, res: Response) => {
         message: "Welcome to Event Management API"
     })
 })
-
-//app.routes
-app.use('/api/route')
 
 app.get("/health", (req: Request, res: Response) => {
     res.status(200).json({

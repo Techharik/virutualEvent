@@ -36,19 +36,17 @@ const userSchema = new Schema<IUser>({
 
 }, { timestamps: true });
 
-userSchema.pre("save", async function (next: any) {
-    if (!this.isModified("password")) return next();
-    this.password = await bcrypt.hash(this.password, 12);
-    next();
+userSchema.pre("save", async function () {
+    if (!this.isModified("password")) return;
+
+    const salt = await bcrypt.genSalt(12);
+    this.password = await bcrypt.hash(this.password, salt);
+
+
 });
 
-userSchema.methods.verifyPassword = async function (
-    candidatePassword: string,
-    userPassword: string
-): Promise<boolean> {
-    return await bcrypt.compare(candidatePassword, userPassword);
-};
 
-const UserModel = model<IUser>('UserModel', userSchema);
+
+const UserModel = model<IUser>('User', userSchema);
 
 export default UserModel

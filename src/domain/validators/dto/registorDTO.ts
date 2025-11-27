@@ -1,7 +1,8 @@
 // after validation returning shape
+import { z } from "zod";
+import { loginSchema, registerShema } from "../../../schemaTypes/userTypes";
 
-export interface RegisterDTO {
-    name: string;
-    email: string;
-    password: string
-}
+
+export type RegisterDTO = z.infer<typeof registerShema>
+export type LoginDTO = z.infer<typeof loginSchema>
+

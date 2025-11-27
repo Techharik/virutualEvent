@@ -15,7 +15,7 @@ export class MongoUserRepository implements IUserRepository {
     }
 
     async findByEmail(email: string): Promise<UserEntityType | null> {
-        const result = await UserModel.findOne({ email })
+        const result = await UserModel.findOne({ email }).select("+password")
         return result ? new User(result._id.toString(), result.name, result.email, result.password) : null
     }
 

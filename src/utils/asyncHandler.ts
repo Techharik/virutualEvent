@@ -1,5 +1,7 @@
 import { Request, Response, NextFunction } from "express";
 import { AppError } from "./errorHandler";
+import { success } from "zod";
+import { logger } from "../middlewares/logger";
 
 type AsyncHandler = (req: Request, res: Response, next: NextFunction) => Promise<any>
 
@@ -12,21 +14,16 @@ export const asyncHandler =
                 console.log("Error caught:", err);
 
                 if (err instanceof AppError) {
+                    logger.error(err.message, { code: err.statusCode })
                     return res.status(err.statusCode).json({
                         status: "error",
                         message: err.message,
                     });
                 }
 
-                if (err.name === "ValidationError") {
-                    return res.status(400).json({
-                        status: "fail",
-                        message: "Validation failed",
-                        errors: err.errors,
-                    });
-                }
 
                 if (err.code === 11000) {
+                    logger.error("Duplicate resource", { code: 409 })
                     return res.status(409).json({
                         status: "fail",
                         message: "Duplicate resource",
@@ -36,6 +33,7 @@ export const asyncHandler =
                 }
 
                 if (err instanceof SyntaxError) {
+                    logger.error("Invalid JSON payload", { code: 400 })
                     return res.status(400).json({
                         status: "fail",
                         message: "Invalid JSON payload",

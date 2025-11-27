@@ -12,10 +12,20 @@
     "allowJs": false,
     "resolveJsonModule": true,
     "noEmit": false,
-    "noEmitOnError": true
+    "noEmitOnError": true,
+    "types": [
+      "node",
+      "express"
+    ],
+    "typeRoots": [
+      "./node_modules/@types",
+      "./src/types"
+    ],
+    "baseUrl": "src"
   },
   "include": [
-    "src"
+    "src",
+    "src/types"
   ],
   "exclude": [
     "node_modules"

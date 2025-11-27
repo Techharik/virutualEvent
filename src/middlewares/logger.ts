@@ -1,5 +1,5 @@
 import winston from "winston";
-
+import morgan from "morgan";
 const httpOnly = winston.format((info) => {
     if (info.level === "http") {
         return info;
@@ -10,14 +10,15 @@ const httpOnly = winston.format((info) => {
 class Logger {
     private logger;
     constructor() {
+
         this.logger = winston.createLogger({
             level: 'info',
             format: winston.format.json(),
             defaultMeta: { service: 'event-service' },
             transports: [
-                new winston.transports.File({ filename: 'error.log', level: 'error' }),
-                new winston.transports.File({ filename: 'combined.log' }),
-                new winston.transports.File({ filename: 'access.log', level: 'http', format: httpOnly }),
+                new winston.transports.File({ filename: 'monitor-logs/error.log', level: 'error' }),
+                new winston.transports.File({ filename: 'monitor-logs/combined.log' }),
+                new winston.transports.File({ filename: 'monitor-logs/access.log', level: 'http', format: httpOnly }),
             ],
         });
         if (process.env.NODE_ENV !== 'production') {
@@ -36,9 +37,16 @@ class Logger {
         this.logger.error(message, meta);
     }
 
-    warn(message: string, meta?: any) {
-        this.logger.warn(message, meta);
+    http(message: string, meta?: any) {
+        this.logger.http(message, meta);
     }
 }
 
 export const logger = new Logger();
+
+export const requestLogger = morgan("tiny", {
+    stream: {
+        write: (message: any) => logger.http(message.trim()),
+    },
+});
+
