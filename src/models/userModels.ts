@@ -1,7 +1,8 @@
-import mongoose, { model, Schema, Document } from 'mongoose';
+import mongoose, { model, Schema, Document, Types } from 'mongoose';
 import bcrypt from 'bcrypt';
 
 export interface IUser extends Document {
+    _id: Types.ObjectId;
     name: string;
     email: string;
     password: string;
@@ -48,6 +49,6 @@ userSchema.methods.verifyPassword = async function (
     return await bcrypt.compare(candidatePassword, userPassword);
 };
 
-const User = model<IUser>('User', userSchema);
+const UserModel = model<IUser>('UserModel', userSchema);
 
-export default User
+export default UserModel

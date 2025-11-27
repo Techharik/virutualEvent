@@ -1,9 +1,7 @@
-import { Document } from "mongoose";
+import { z } from "zod";
 
-export interface IUserDocument extends Document {
-    name: string;
-    email: string;
-    password: string;
-    verifyPassword(candidatePass: string, userPassword: string): Promise<boolean>
-}
-
+export const registerShema = z.object({
+    name: z.string().min(1, "Name is required"),
+    email: z.string().email("Invalid email address"),
+    password: z.string().min(6, "Password must be at least 6 characters")
+})

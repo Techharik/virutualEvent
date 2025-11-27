@@ -6,20 +6,20 @@ export class AppError extends Error {
     }
 }
 
-export class NotFountError extends AppError {
-    constructor(statusCode = 404, message = 'Resource Not Found') {
-        super(statusCode, message)
+export class NotFoundError extends AppError {
+    constructor(message = 'Resource Not Found') {
+        super(404, message)
     }
 }
 
 export class ValidationError extends AppError {
-    constructor(statusCode = 400, message = 'Validation Failed') {
-        super(statusCode, message)
+    constructor(message = 'Validation Failed') {
+        super(400, message)
     }
 }
 
 export class ConflictError extends AppError {
-    constructor(statusCode = 409, message = 'Resource Already Exists') {
-        super(statusCode, message)
+    constructor(message = 'Resource Already Exists') {
+        super(409, message)
     }
 }
