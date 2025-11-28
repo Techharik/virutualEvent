@@ -18,7 +18,7 @@ export class EmailService {
             subject: `Successfully registered for ${eventName}`,
             html: `
                 <h2>Registration Successful 🎉</h2>
-                <img src="https://images.pexels.com/photos/2263436/pexels-photo-2263436.jpeg?cs=srgb&dl=pexels-teddy-2263436.jpg&fm=jpg" alt="EventImage" />
+                <img src="https://images.pexels.com/photos/2263436/pexels-photo-2263436.jpeg?cs=srgb&dl=pexels-teddy-2263436.jpg&fm=jpg" alt="EventImage" width="400" height="400" />
                 <p>You have successfully registered for the event:</p>
                 <b>${eventName}</b>
                 <br />
