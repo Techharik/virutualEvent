@@ -1,10 +1,10 @@
-import { RegisterForEventDTO } from "domain/validators/dto/eventDTO";
+import { RegisterForEventDTO } from "../domain/validators/dto/eventDTO";
 import { Events } from "../domain/entities/Event";
 import { IEventRepository } from "../domain/repositories/IEventRepository";
 import { IEventValidator } from "../domain/validators/IEventValidator";
 import { ConflictError, ForbiddenError, NotFoundError } from "../utils/errorHandler";
 import { EmailService } from "./EmailServices";
-import { formatTime } from "utils/formatTime";
+import { formatTime } from "../utils/formatTime";
 
 export class EventService {
     constructor(private validator: IEventValidator, private repo: IEventRepository, private emailService: EmailService) { }

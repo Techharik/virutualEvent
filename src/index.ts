@@ -1,7 +1,5 @@
-import express, { NextFunction, type Request, type Response } from "express";
+import express, { type Request, type Response } from "express";
 import 'dotenv/config'
-import { NODE_ENV } from "./config/config";
-import winston from 'winston';
 import { errorHandler } from "./middlewares/error";
 import cors from "cors";
 import { requestLogger } from "./middlewares/logger";

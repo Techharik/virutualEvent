@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { EventService } from "../services/eventServices";
-import { ValidationError } from "utils/errorHandler";
+import { ValidationError } from "../utils/errorHandler";
 
 export class EventController {
     constructor(private eventService: EventService) {

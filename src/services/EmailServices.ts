@@ -1,5 +1,4 @@
 import nodemailer from "nodemailer";
-import { formatTime } from "utils/formatTime";
 
 export class EmailService {
     private transporter = nodemailer.createTransport({
