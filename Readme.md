@@ -7,23 +7,20 @@ VirtualEvent is a **clean, scalable, and production-ready backend** built using 
 The architecture follows a **Domain-Driven Design (DDD)** inspired modular structure that clearly separates controllers, services, domain entities, models, and middlewares.
 
 This backend is ideal for building virtual event platforms, dashboards, user systems, or any multi-module API-heavy application.
+<a href="https://www.veed.io/view/9a4fea68-b9c8-4de6-8279-4eed0d04c0dc?source=editor&panel=share">Click Here to see the Video How all the code works  👆👆</a>
 
+### Functionality:
+register ,login - user ✅
+create, read , readone , update, delete - Event ✅
+register for event : Participants ✅
+send email to the successdully register paritcipants- ✅
 
 ### NOTE:Followed DI and Partial DDD
-
-
 ---
 
 # 🏛️ Architecture Overview
 
 This project uses a clean, layered architecture:
-
-
-
-
-
-
-
 ```
 ┌───────────────────────┐
 │       Bootstrap       │ → Application initialization 
