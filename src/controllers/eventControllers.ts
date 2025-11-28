@@ -52,7 +52,7 @@ export class EventController {
             data: deleteEvent
         })
     }
-    async register(req: Request, res: Response) {
+    async registerParticipants(req: Request, res: Response) {
         const { eventId } = req.body;
 
         if (!eventId) {
@@ -64,7 +64,7 @@ export class EventController {
         const result = await this.eventService.registerForEvent(eventId, userId);
 
         return res.status(200).json({
-            message: "User registered successfully",
+            status: "success",
             data: result
         });
     }

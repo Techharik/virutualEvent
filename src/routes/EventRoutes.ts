@@ -18,9 +18,10 @@ const controller = new EventController(service)
 
 router.get('/', asyncHandler(controller.getAllEvents))
 router.get('/:id', asyncHandler(controller.getEvent))
-router.post('/', authMiddleware, asyncHandler(controller.registerEvent))
+router.post('/register', authMiddleware, asyncHandler(controller.registerEvent))
 router.put('/:id', authMiddleware, asyncHandler(controller.updateEvent))
 router.delete('/:id', authMiddleware, asyncHandler(controller.deleteEvent))
+router.post('/booking', authMiddleware, asyncHandler(controller.registerParticipants))
 
 
 export default router;
