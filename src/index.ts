@@ -5,15 +5,23 @@ import cors from "cors";
 import { requestLogger } from "./middlewares/logger";
 import userRoutes from './routes/userRoutes'
 import eventRoutes from './routes/EventRoutes'
+import { rateLimit } from 'express-rate-limit'
 
 export const app = express();
 
-
+const limiter = rateLimit({
+    windowMs: 15 * 60 * 1000, // 15 minutes
+    limit: 100, // Limit each IP to 100 requests per `window` (here, per 15 minutes).
+    standardHeaders: 'draft-8', // draft-6: `RateLimit-*` headers; draft-7 & draft-8: combined `RateLimit` header
+    legacyHeaders: false, // Disable the `X-RateLimit-*` headers.
+    ipv6Subnet: 56,
+})
 
 //middlware
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use(cors())
+app.use(limiter)
 app.use(requestLogger)
 
 //routes
