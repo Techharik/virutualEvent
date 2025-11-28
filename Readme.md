@@ -14,6 +14,10 @@ register ,login - user ✅
 create, read , readone , update, delete - Event ✅
 register for event : Participants ✅
 send email to the successdully register paritcipants- ✅
+monitor logs APM is added - ✅
+DB and zod validation added in a DI(dependecy Injection) - ✅
+Enitity is added for User and Events - ✅
+Email Service , Error Handling - ✅
 
 ### NOTE:Followed DI and Partial DDD
 ---
