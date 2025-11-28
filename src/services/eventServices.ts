@@ -3,26 +3,29 @@ import { Events } from "../domain/entities/Event";
 import { IEventRepository } from "../domain/repositories/IEventRepository";
 import { IEventValidator } from "../domain/validators/IEventValidator";
 import { ConflictError, ForbiddenError, NotFoundError } from "../utils/errorHandler";
+import { EmailService } from "./EmailServices";
+import { formatTime } from "utils/formatTime";
 
 export class EventService {
-    constructor(private validator: IEventValidator, private repo: IEventRepository) { }
+    constructor(private validator: IEventValidator, private repo: IEventRepository, private emailService: EmailService) { }
 
     async register(data: any, organizerId: string) {
         //    validate the event input;
         const dto = this.validator.registerEvent(data);
+        const participants = dto.participants ? dto.participants : []
+        const event = new Events("", dto.date, dto.time, dto.description, participants, organizerId);
 
-        const event = new Events("", dto.date, dto.time, dto.description, dto.participants, organizerId);
-
-        const result = this.repo.create(event);
+        const result = await this.repo.create(event);
         return result;
     }
 
     async findAll() {
-        const result = this.repo.findAll();
+        const result = await this.repo.findAll();
         return result
     }
     async findOne(id: string) {
-        const result = this.repo.findSingle(id);
+        const result = await this.repo.findSingle(id);
+        console.log(result)
         if (!result) {
             throw new NotFoundError("Event Not Exists")
         }
@@ -35,10 +38,10 @@ export class EventService {
         if (!event) {
             throw new NotFoundError('Event id not found');
         }
-        if (event.organizerId === userId) {
+        if (event.organizerId !== userId) {
             throw new ForbiddenError("You are not allowed to update this event")
         }
-        const result = this.repo.update(id, dto);
+        const result = await this.repo.update(id, dto);
         return result
     }
 
@@ -47,14 +50,14 @@ export class EventService {
         if (!event) {
             throw new NotFoundError('Event id not found');
         }
-        if (event.organizerId === userId) {
-            throw new ForbiddenError("You are not allowed to update this event")
+        if (event.organizerId !== userId) {
+            throw new ForbiddenError("You are not allowed to Delete this event")
         }
-        const result = this.repo.delete(id);
+        const result = await this.repo.delete(id);
         return result
     }
 
-    async registerForEvent(eventId: string, userId: string) {
+    async registerForEvent(eventId: string, userId: string, userEmail: string) {
         const event = await this.repo.findSingle(eventId);
         if (!event) {
             throw new NotFoundError("Event not found");
@@ -62,10 +65,21 @@ export class EventService {
         if (event.organizerId === userId) {
             throw new ForbiddenError("Organizer cannot register for their own event");
         }
-        if (event.participants.includes(userId)) {
+        if (event?.participants?.includes(userId)) {
             throw new ConflictError("User already registered for this event");
         }
-        return await this.repo.registerParticipant(eventId, userId);
+        //sending Email to the participants
+
+
+        const updatedEvent = await this.repo.registerParticipant(eventId, userId);
+        const time = formatTime(updatedEvent.time)
+        await this.emailService.sendEventRegistrationEmail(
+            userEmail,
+            updatedEvent.description,
+            updatedEvent.date,
+            time
+        );
+        return updatedEvent
     }
 
 }

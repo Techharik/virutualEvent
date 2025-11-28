@@ -7,10 +7,10 @@ export class EventController {
 
     }
 
-    async registerEvent(req: Request, res: Response) {
+    registerEvent = async (req: Request, res: Response) => {
         const body = req.body;
         const organizerId = req.user!.id;
-        const event = this.eventService.register(body, organizerId);
+        const event = await this.eventService.register(body, organizerId);
         res.status(201).json({
             status: "success",
             data: event
@@ -18,41 +18,41 @@ export class EventController {
 
     }
 
-    async getAllEvents(req: Request, res: Response) {
-        const events = this.eventService.findAll()
+    getAllEvents = async (req: Request, res: Response) => {
+        const events = await this.eventService.findAll()
         res.status(200).json({
             status: "success",
             data: events
         })
     }
 
-    async getEvent(req: Request, res: Response) {
-        const event = this.eventService.findOne(req.params.id);
+    getEvent = async (req: Request, res: Response) => {
+        const event = await this.eventService.findOne(req.params.id);
         res.status(200).json({
             status: "success",
             data: event
         })
     }
-    async updateEvent(req: Request, res: Response) {
-        const raw = req.body();
+    updateEvent = async (req: Request, res: Response) => {
+        const raw = req.body;
         const id = req.params.id;
         const userId = req.user?.id
-        const updatedEvent = this.eventService.update(id, raw, userId);
+        const updatedEvent = await this.eventService.update(id, raw, userId);
         res.status(200).json({
             status: "success",
             data: updatedEvent
         })
     }
-    async deleteEvent(req: Request, res: Response) {
+    deleteEvent = async (req: Request, res: Response) => {
         const id = req.params.id;
         const userId = req.user?.id
-        const deleteEvent = this.eventService.delete(id, userId);
+        const deleteEvent = await this.eventService.delete(id, userId);
         res.status(200).json({
             status: 'success',
             data: deleteEvent
         })
     }
-    async registerParticipants(req: Request, res: Response) {
+    registerParticipants = async (req: Request, res: Response) => {
         const { eventId } = req.body;
 
         if (!eventId) {
@@ -60,8 +60,9 @@ export class EventController {
         }
 
         const userId = req.user!.id;
+        const userEmail = req.user!.email;
 
-        const result = await this.eventService.registerForEvent(eventId, userId);
+        const result = await this.eventService.registerForEvent(eventId, userId, userEmail);
 
         return res.status(200).json({
             status: "success",

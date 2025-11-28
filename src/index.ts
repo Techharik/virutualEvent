@@ -20,7 +20,7 @@ app.use(requestLogger)
 
 //routes
 app.use("/api/v1/user/", userRoutes)
-app.use("/api/v1/events/", eventRoutes)
+app.use("/api/v1/event/", eventRoutes)
 
 
 app.get('/', (req: Request, res: Response) => {

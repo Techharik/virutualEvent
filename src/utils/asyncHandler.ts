@@ -39,7 +39,13 @@ export const asyncHandler =
                         message: "Invalid JSON payload",
                     });
                 }
-
+                //mongo db error cast
+                if (err.name === "CastError") {
+                    return res.status(400).json({
+                        status: "fail",
+                        message: "Invalid ID format",
+                    });
+                }
                 next(err);
             }
         };

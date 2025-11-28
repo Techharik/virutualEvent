@@ -3,7 +3,7 @@ export interface EventEntity {
     date: Date,
     time: string,
     description: string,
-    participants: string[],
+    participants?: string[],
     organizerId: string
     registerUser: (userId: string) => void
 }

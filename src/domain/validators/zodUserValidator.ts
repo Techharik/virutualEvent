@@ -12,6 +12,7 @@ export class ZodUserValidator implements IUserValidator {
 
         if (!result.success) {
             const msg = result.error.issues[0].message
+            console.log(msg, 'mmm')
             throw new ValidationError(msg)
         }
         return result.data

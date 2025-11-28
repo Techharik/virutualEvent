@@ -24,15 +24,15 @@ export function authMiddleware(req: Request, res: Response, next: NextFunction) 
     }
 
     if (!token) {
-        return res.status(401).json({ error: 'Unauthorized' });
+        return res.status(401).json({ status: 'error', error: 'Unauthorized , Login to continue' });
     }
 
     try {
         const payload = jwt.verify(token, JWT_SECRET) as any;
-        req.user = { id: payload?.id };
+        req.user = { id: payload?.id, email: payload?.email };
         return next();
     } catch (_err) {
-        return res.status(401).json({ error: 'Invalid token' });
+        return res.status(401).json({ status: 'error', error: 'Invalid token , Relogin to continue' });
     }
 }
 

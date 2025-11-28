@@ -9,7 +9,8 @@ export const createToken = (user: UserEntityType) => {
 
     const token = jwt.sign(
         {
-            id: user.id
+            id: user.id,
+            email: user.email
         },
         JWT_SECRET!,
         { expiresIn: JWT_TIME }

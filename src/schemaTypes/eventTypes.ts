@@ -7,7 +7,7 @@ export const registerEventSchema = z.object({
         .string()
         .regex(/^([01]\d|2[0-3]):([0-5]\d)$/, "Time must be in HH:MM format"),
     description: z.string().min(12, "Minimum twelve characters required"),
-    participants: z.array(z.string()),
+    participants: z.array(z.string()).optional()
 
 });
 

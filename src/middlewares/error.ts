@@ -4,7 +4,7 @@ export const errorHandler: ErrorRequestHandler = (err: Error, req: Request, res:
     console.error("unexpected error", err)
 
     res.status(500).json({
-        success: 'false',
+        status: 'failed',
         messsage: err.message || 'Internal Server Error'
     })
 }

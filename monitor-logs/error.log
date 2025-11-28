@@ -5,3 +5,32 @@
 {"code":400,"level":"error","message":"Invalid input: expected object, received undefined","service":"event-service"}
 {"code":400,"level":"error","message":"Invalid input: expected string, received undefined","service":"event-service"}
 {"code":400,"level":"error","message":"Invalid input: expected string, received undefined","service":"event-service"}
+{"level":"error","message":"DBconnection failed","service":"event-service"}
+{"code":400,"level":"error","message":"Name is required","service":"event-service"}
+{"code":400,"level":"error","message":"Invalid email address","service":"event-service"}
+{"code":409,"level":"error","message":"Email already exists","service":"event-service"}
+{"code":400,"level":"error","message":"Password mismatch,Enter the correct the password","service":"event-service"}
+{"code":404,"level":"error","message":"Email not exists","service":"event-service"}
+{"code":400,"level":"error","message":"Invalid email address","service":"event-service"}
+{"code":400,"level":"error","message":"Invalid input: expected array, received undefined","service":"event-service"}
+{"code":400,"level":"error","message":"Date must be today or later","service":"event-service"}
+{"code":404,"level":"error","message":"Event Not Exists","service":"event-service"}
+{"code":404,"level":"error","message":"Event Not Exists","service":"event-service"}
+{"code":401,"level":"error","message":"You are not allowed to update this event","service":"event-service"}
+{"code":400,"level":"error","message":"Time must be in HH:MM format","service":"event-service"}
+{"code":401,"level":"error","message":"You are not allowed to update this event","service":"event-service"}
+{"code":401,"level":"error","message":"You are not allowed to update this event","service":"event-service"}
+{"code":401,"level":"error","message":"Organizer cannot register for their own event","service":"event-service"}
+{"code":409,"level":"error","message":"User already registered for this event","service":"event-service"}
+{"code":404,"level":"error","message":"Event id not found","service":"event-service"}
+{"code":409,"level":"error","message":"User already registered for this event","service":"event-service"}
+{"code":400,"level":"error","message":"Invalid email address","service":"event-service"}
+{"code":404,"level":"error","message":"Email not exists","service":"event-service"}
+{"code":400,"level":"error","message":"Invalid email address","service":"event-service"}
+{"code":404,"level":"error","message":"Event id not found","service":"event-service"}
+{"code":401,"level":"error","message":"You are not allowed to Delete this event","service":"event-service"}
+{"code":401,"level":"error","message":"Organizer cannot register for their own event","service":"event-service"}
+{"level":"error","message":"DBconnection failed","service":"event-service"}
+{"code":401,"level":"error","message":"You are not allowed to update this event","service":"event-service"}
+{"code":404,"level":"error","message":"Email not exists","service":"event-service"}
+{"code":409,"level":"error","message":"User already registered for this event","service":"event-service"}

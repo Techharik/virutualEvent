@@ -18,5 +18,8 @@ export class MongoUserRepository implements IUserRepository {
         const result = await UserModel.findOne({ email }).select("+password")
         return result ? new User(result._id.toString(), result.name, result.email, result.password) : null
     }
+    async findManyByIds(ids: string[]) {
+        return UserModel.find({ _id: { $in: ids } }).select("name email");
+    }
 
 }
