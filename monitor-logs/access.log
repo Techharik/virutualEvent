@@ -342,3 +342,17 @@
 {"level":"http","message":"PUT /api/v1/event/692960eec9eec6caac54dd34 200 236 - 621.885 ms","service":"event-service"}
 {"level":"http","message":"GET /api/v1/event/ 200 1032 - 279.642 ms","service":"event-service"}
 {"level":"http","message":"POST /api/v1/event/booking 200 265 - 5180.720 ms","service":"event-service"}
+{"dbconnection":true,"level":"http","message":"mongodb connection","service":"event-service"}
+{"level":"http","message":"POST /api/v1/user/register 201 176 - 1153.246 ms","service":"event-service"}
+{"level":"http","message":"POST /api/v1/user/login 200 245 - 841.573 ms","service":"event-service"}
+{"level":"http","message":"POST /api/v1/event/register 201 226 - 342.773 ms","service":"event-service"}
+{"level":"http","message":"POST /api/v1/event/booking 401 64 - 4.563 ms","service":"event-service"}
+{"level":"http","message":"POST /api/v1/user/login 200 252 - 789.163 ms","service":"event-service"}
+{"level":"http","message":"POST /api/v1/event/booking 200 252 - 4845.237 ms","service":"event-service"}
+{"level":"http","message":"GET /api/v1/event/692b1181abf3c5f4d08c973e 200 252 - 259.518 ms","service":"event-service"}
+{"level":"http","message":"GET /api/v1/event/ 200 1283 - 292.438 ms","service":"event-service"}
+{"dbconnection":true,"level":"http","message":"mongodb connection","service":"event-service"}
+{"level":"http","message":"POST /api/v1/user/login 200 252 - 505.734 ms","service":"event-service"}
+{"level":"http","message":"POST /api/v1/event/register 201 226 - 261.019 ms","service":"event-service"}
+{"level":"http","message":"POST /api/v1/user/login 200 256 - 476.487 ms","service":"event-service"}
+{"level":"http","message":"POST /api/v1/event/booking 200 252 - 4331.591 ms","service":"event-service"}

@@ -37,3 +37,5 @@
 {"code":409,"level":"error","message":"User already registered for this event","service":"event-service"}
 {"code":409,"level":"error","message":"Email already exists","service":"event-service"}
 {"code":404,"level":"error","message":"Email not exists","service":"event-service"}
+{"level":"error","message":"DBconnection failed","service":"event-service"}
+{"level":"error","message":"DBconnection failed","service":"event-service"}

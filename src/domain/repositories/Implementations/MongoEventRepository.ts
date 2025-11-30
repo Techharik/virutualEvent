@@ -1,3 +1,4 @@
+import { Types } from "mongoose";
 import { EventModel } from "../../../models/eventModels";
 import { NotFoundError } from "../../../utils/errorHandler";
 import { Events } from "../../entities/Event";
@@ -12,11 +13,11 @@ export class MongoEventRepository implements IEventRepository {
         const created = await EventModel.create({
             description: data.description,
             date: data.date,
-            organizerId: data.organizerId,
+            organizerId: new Types.ObjectId(data.organizerId),
             time: data.time,
-            participants: data.participants
+            participants: data.participants?.map(id => new Types.ObjectId(id)),
         })
-        return new Events(created._id.toString(), created.date, created.time, created.description, created.participants, created.organizerId)
+        return new Events(created._id.toString(), created.date, created.time, created.description, created.participants?.map(id => id.toString()) ?? [], created.organizerId.toString())
     }
     async findAll(): Promise<EventEntity[]> {
         const results = await EventModel.find().lean();
@@ -28,7 +29,7 @@ export class MongoEventRepository implements IEventRepository {
         if (!doc) {
             return null
         }
-        return new Events(doc._id.toString(), doc.date, doc.time, doc.description, doc.participants, doc.organizerId)
+        return new Events(doc._id.toString(), doc.date, doc.time, doc.description, doc.participants?.map(id => id.toString()) ?? [], doc.organizerId.toString())
     }
     async update(id: string, data: UpdateEventDTO) {
         const updates: any = {};
@@ -53,8 +54,8 @@ export class MongoEventRepository implements IEventRepository {
             updated.date,
             updated.time,
             updated.description,
-            updated.participants,
-            updated.organizerId
+            updated.participants?.map(id => id.toString()) ?? [],
+            updated.organizerId.toString()
         );
     }
 
@@ -79,3 +80,4 @@ export class MongoEventRepository implements IEventRepository {
 
 
 }
+
